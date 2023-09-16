@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background: linear-gradient(132deg, #d65db1, #ff6f91, #ff9671, #ffc75f);
+}
+
+h1 {
+  display: none;
+  position: absolute;
+  font-size: 9rem;
+  z-index: -1;
+  color: white;
+  left: 50%;
+  transform: translate(-50%, -330%);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 70px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  background: rgb(255 255 255 / 61%);
+  border: 1px solid rgb(0 0 0 / 10%);
+  color: black;
+  transition: 0.3s;
+  font-size: 1.2rem;
+}
+
+button[data-operation],
+button[data-equals] {
+  float: left;
+  background-image: linear-gradient(to bottom, #fee000, #ff6f3c);
+  background-attachment: fixed;
+  color: white;
+  font-size: 1.8rem;
+}
+
+button[data-operation]:hover,
+button[data-equals]:hover {
+  float: left;
+  background-image: linear-gradient(to bottom, #fee000, #df521f);
+  background-attachment: fixed;
+}
+
+button:nth-child(17) {
+  border-bottom-left-radius: 10px;
+}
+
+button:nth-child(19) {
+  border-bottom-right-radius: 10px;
+}
+
+button[data-delete],
+button[data-all-clear] {
+  background-color: #fadfec;
+}
+
+button[data-delete]:hover,
+button[data-all-clear]:hover {
+  background-color: #f6c8dd;
+}
+
+button[data-number] {
+  background-color: #fbe8f1;
+}
+
+button[data-number]:hover {
+  background-color: #f8dae8;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  padding: 15px 20px;
+  grid-column: 1 / -1;
+  background: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.198);
+  word-wrap: break-word;
+  word-break: break-all;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid rgb(214, 214, 214);
+  min-height: 160px;
+  z-index: -1;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.output span {
+  background: #a9a4a4;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.previous-operate {
+  color: #a0a0af;
+  font-size: 1.5rem;
+}
+.current-operate {
+  color: black;
+  font-size: 2.5rem;
+}
+
+.shadow {
+  position: fixed;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000000b0;
+  height: 20px;
+  width: 450px;
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: -1;
+}
